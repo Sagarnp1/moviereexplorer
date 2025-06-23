@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // Genre Chips
+          // Genre 
           if (genreProvider.hasSelectedGenres)
             SliverToBoxAdapter(
               child: Column(
@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-          // Content based on search or recommendations
+          
           if (movieProvider.currentQuery.isNotEmpty) ...[
             SliverToBoxAdapter(
               child: Padding(
@@ -183,15 +183,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             _buildMovieGrid(movieProvider.searchResults, movieProvider.isLoading),
           ] else ...[
-            // Recommended Movies (if user has selected genres)
+            
             if (genreProvider.hasSelectedGenres && genreProvider.recommendedMovies.isNotEmpty)
               _buildMovieSection('Recommended for You', genreProvider.recommendedMovies, genreProvider.isLoading),
             
-            // Trending and Popular sections
+            
             _buildMovieSection('Trending Now', movieProvider.trendingMovies, movieProvider.isLoading),
             _buildMovieSection('Popular Movies', movieProvider.popularMovies, movieProvider.isLoading),
             
-            // Genre-based sections for selected genres
+            
             ...genreProvider.selectedGenreObjects.take(3).map((genre) {
               return FutureBuilder<List<Movie>>(
                 future: genreProvider.getMoviesForGenre(genre.id),
