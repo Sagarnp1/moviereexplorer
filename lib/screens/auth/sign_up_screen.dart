@@ -299,7 +299,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                               ),
                               icon: Image.asset(
-                                'assets/google_logo.png', // You'll need to add this asset
+                                'assets/google_logo.png', 
                                 height: 24,
                                 width: 24,
                                 errorBuilder: (context, error, stackTrace) {
@@ -319,7 +319,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       const SizedBox(height: 32),
                       
-                      // Sign In Link
+                      // Sign In 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -343,7 +343,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 
-                // Error Message
+                // Error
                 Consumer<AuthProvider>(
                   builder: (context, authProvider, child) {
                     if (authProvider.errorMessage != null) {
@@ -382,7 +382,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       );
       
       if (success && mounted) {
-        context.go('/'); // Navigate to home screen
+        context.go('/'); 
       }
     }
   }
@@ -392,7 +392,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final success = await authProvider.signInWithGoogle();
     
     if (success && mounted) {
-      context.go('/'); // Navigate to home screen
+      context.go('/'); 
     }
   }
 }
