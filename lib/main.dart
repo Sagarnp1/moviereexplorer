@@ -23,13 +23,13 @@ import 'models/favorite_movie.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase
+  // Firebase
   await Firebase.initializeApp();
 
-  // Initialize Hive
+  //  Hive
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteMovieAdapter());
-  // Open Hive box for favorites
+  
   await Hive.openBox<FavoriteMovie>('favorites');
 
   runApp(
@@ -120,7 +120,7 @@ class MyApp extends StatelessWidget {
         return null;
       },
       routes: <RouteBase>[
-        // Auth routes
+        // Auth r
         GoRoute(
           path: '/signin',
           builder: (BuildContext context, GoRouterState state) {
@@ -226,7 +226,7 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope( // Changed from WillPopScope to PopScope
+    return PopScope(
       canPop: GoRouterState.of(context).uri.toString() == '/',
       onPopInvokedWithResult: (didPop, _) {
         if (!didPop && GoRouterState.of(context).uri.toString() != '/') {
@@ -331,7 +331,7 @@ class _MainScaffoldState extends State<MainScaffold> {
                 : null,
             onTap: () {
               Navigator.pop(context);
-              context.push('/genre-movies'); // Changed from /genres to /genre-movies
+              context.push('/genre-movies'); 
             },
           ),
           const Divider(color: Colors.grey),
