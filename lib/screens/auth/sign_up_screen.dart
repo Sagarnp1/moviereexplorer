@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Join us to discover amazing movies',
+                  'Join me to discover amazing movies',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
