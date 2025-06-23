@@ -5,7 +5,7 @@ import '../models/genre.dart';
 
 class TMDBService {
   static const String _baseUrl = 'https://api.themoviedb.org/3';
-  static const String _apiKey = '4d096804f90af981595049c870a27b2b';
+  static const String _apiKey = '//api key removed';
 
   Future<List<Movie>> searchMovies(String query) async {
     if (query.isEmpty) return [];
